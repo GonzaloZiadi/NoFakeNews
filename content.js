@@ -4,10 +4,10 @@ var observer = new MutationObserver(function(mutations) {
         $('a').each(function(index, value){
             if(value.href.indexOf("l.facebook") >= 0) {
                 if(value.href.indexOf("cnn") >= 0) {
-                    $(value).closest('._5jmm').css({"border": "5px solid red"});
+                    $(value).closest('._1dwg').css({"border": "5px solid red"});
                 }
                 else if(value.href.indexOf("onion") >= 0) {
-                    $(value).closest('._5jmm').css({"border": "5px solid green"});
+                    $(value).closest('._1dwg').css({"border": "5px solid green"});
                 }
             }
         })
