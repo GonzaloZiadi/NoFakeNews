@@ -5,10 +5,12 @@ var observer = new MutationObserver(function(mutations) {
             $(this).addClass('checked');
             var profile = $(this).html().toString().toLowerCase();
                 if(profile.indexOf("cnn") >= 0) {
-                    $(value).closest('._1dwg').css({"border": "5px solid red"});
+                    $(value).closest('._1dwg').css({"border": "3px solid red"});
+                    $(value).closest('._1dwg').prepend('<h3>Politcal</h3>');
                 }
                 else if(profile.indexOf("onion") >= 0) {
-                    $(value).closest('._1dwg').css({"border": "5px solid green"});
+                    $(value).closest('._1dwg').css({"border": "3px solid green"});
+                    $(value).closest('._1dwg').prepend('<h3>Satire</h3>');
                 }
         })
     })
