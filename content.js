@@ -1,15 +1,14 @@
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         // All anchor tags on the page
-        $('a').each(function(index, value){
-            if(value.href.indexOf("l.facebook") >= 0) {
-                if(value.href.indexOf("cnn") >= 0) {
+        $('.profileLink, .fwb.fcg a').each(function(index, value){
+            var profile = $(this).html().toString().toLowerCase();
+                if(profile.indexOf("cnn") >= 0) {
                     $(value).closest('._1dwg').css({"border": "5px solid red"});
                 }
-                else if(value.href.indexOf("onion") >= 0) {
+                else if(profile.indexOf("onion") >= 0) {
                     $(value).closest('._1dwg').css({"border": "5px solid green"});
                 }
-            }
         })
     })
 });
@@ -17,6 +16,7 @@ var observer = new MutationObserver(function(mutations) {
 var config = {
     attributes: true,
     childList: true,
+    subtree: true,
     characterData: true
 };
 
