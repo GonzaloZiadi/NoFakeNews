@@ -14,13 +14,13 @@ var observer = new MutationObserver(function(mutations) {
         // All anchor tags on the page
         $('.profileLink, .fwb.fcg a').not('.checked').each(function(index, value){
             $(this).addClass('checked');
-            var profile = $(this).html().toString().toLowerCase();
-                if(profile.indexOf("cnn") >= 0) {
-                    $(value).closest('._1dwg').css({"border": "5px solid red"});
-                }
-                else if(profile.indexOf("onion") >= 0) {
-                    $(value).closest('._1dwg').css({"border": "5px solid green"});
-                }
+            var profile = $(this).text().toLowerCase();
+            if(new RegExp(leftCenterBias.join("|")).test(profile)) {
+                $(value).closest('._1dwg').css(blueBorder);
+            }
+            else if(profile.indexOf("onion") >= 0) {
+                $(value).closest('._1dwg').css(greenBorder);
+            }
         })
     })
 });
