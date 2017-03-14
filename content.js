@@ -17,11 +17,11 @@ var observer = new MutationObserver(function(mutations) {
             var profile = $(this).text().toLowerCase();
             if(new RegExp(leftCenterBias.join("|")).test(profile)) {
                 $(value).closest('._1dwg').css(blueBorder);
-                $(value).closest('._1dwg').prepend('<h3 style="color:blue;margin-bottom:10px;">Politcal</h3>');
+                $(value).closest('._1dwg').prepend('<h3 style="color:blue; margin-bottom:10px;">Political</h3>');
             }
             else if(profile.indexOf("onion") >= 0) {
                 $(value).closest('._1dwg').css(greenBorder);
-                $(value).closest('._1dwg').prepend('<h3 style="color:green;margin-bottom:10px;">Satire</h3>');
+                $(value).closest('._1dwg').prepend('<h3 style="color:green; margin-bottom:10px;">Satire</h3>');
             }
         })
     })
