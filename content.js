@@ -48,3 +48,38 @@ var config = {
 
 var target = document.body;
 observer.observe(target, config);
+
+$('.source-wrapper').click(function(){
+    $(this).next('.input-field').toggle();
+})
+
+$('#add-left').click(function(){
+    var source = $('#input-left').val();
+    $('#input-left').val('');
+    leftBias.push(source);
+    console.log(leftBias);
+});
+$('#add-right').click(function(){
+    var source = $('#input-right').val();
+    $('#input-right').val('');
+    rightBias.push(source);
+    console.log(source);
+});
+$('#add-fake').click(function(){
+    var source = $('#input-fake').val();
+    $('#input-fake').val('');
+    fakeNews.push(source);
+    console.log(source);
+});
+$('#add-neutral').click(function(){
+    var source = $('#input-neutral').val();
+    $('#input-neutral').val('');
+    neutral.push(source);
+    console.log(source);
+});
+$('#add-satire').click(function(){
+    var source = $('#input-satire').val();
+    $('#input-satire').val('');
+    satire.push(source);
+    console.log(source);
+});

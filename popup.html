@@ -10,37 +10,70 @@
 			width: 10px;
 			display: inline-block;
 		}
+		.input-field { display:none;}
 	</style>
 </head>
 <body>
 	<h1>No Fake News</h1>
 
 	<div>
-		<div class="source" style="background: blue;"></div>
-		Left bias
+		<div class="source-wrapper">
+			<div class="source" style="background: blue;"></div>
+			Left bias
+	</div>
+		<div class="input-field">
+			<input type="text" id="input-left" placeholder="Add Source"/>
+			<button id="add-left" value="Add Source">Add Source</button>
+	</div>
 	</div>
 
 	<div>
-		<div class="source" style="background: green;"></div>
-		Neutral
+		<div class="source-wrapper">
+			<div class="source" style="background: green;"></div>
+			Neutral
+	</div>
+		<div class="input-field">
+			<input type="text" id="input-neutral" placeholder="Add Source"/>
+			<button id="add-neutral" value="Add Source">Add Source</button>
+	</div>
 	</div>
 
 	<div>
-		<div class="source" style="background: red;"></div>
-		Right bias
+		<div class="source-wrapper">
+			<div class="source" style="background: red;"></div>
+			Right bias
+	</div>
+		<div class="input-field">
+			<input type="text" id="input-right" placeholder="Add Source"/>
+			<button id="add-right" value="Add Source">Add Source</button>
+	</div>
 	</div>
 
 	<div>
-		<div class="source" style="background: purple;"></div>
-		Satire
+		<div class="source-wrapper">
+			<div class="source" style="background: purple;"></div>
+			input-satire
+	</div>
+		<div class="input-field">
+			<input type="text" id="input-satire" placeholder="Add Source"/>
+			<button id="add-neutral" value="Add Source">Add Source</button>
+	</div>
 	</div>
 	
 	<div>
-		<div class="source" style="background: brown;"></div>
-		Fake news
+		<div class="source-wrapper">
+			<div class="source" style="background: brown;"></div>
+			Fake news
+	</div>
+		<div class="input-field">
+			<input type="text" id="add-fake" placeholder="Add Source"/>
+			<button id="add-fake" value="Add Source">Add Source</button>
+	</div>
 	</div>
 
 	<!-- Add popup.js file to open this link in a new tab -->
 	<a href="https://mediabiasfactcheck.com/">Learn more about fake news</a>
+	<script type='text/javascript' src='jquery.js'></script>
+	<script type='text/javascript' src='content.js'></script>
 </body>
 </html>
