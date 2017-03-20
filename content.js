@@ -24,7 +24,7 @@ var observer = new MutationObserver(function(mutations) {
             }
             else if(new RegExp(neutral.join("|")).test(profile)) {
                 $(value).closest('._1dwg').css(greenBorder);
-                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:green;margin-bottom:10px;">Neutral</h3>');
+                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:green;margin-bottom:10px;">Neutral & Trusted Source</h3>');
                 $(value).closest('._1dwg').addClass('checked-prepend');
             }
             else if(new RegExp(rightBias.join("|")).test(profile)) {
