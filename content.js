@@ -4,7 +4,6 @@ var redBorder = {"border": "3px solid red"};
 var purpleBorder = {"border": "3px solid purple"};
 var brownBorder = {"border": "3px solid brown"};
 
-
 var leftBias = ["cnn", "abc news", "the atlantic","the atlantic: news", "the atlantic: politics & policy", "the guardian", "nowthis", "nowthis politics", "vox", "msnbc", "the huffington post", "the huffington post canada", "occupy democrats"];
 var neutral = ["npr", "npr politics"];
 var rightBias = ["the wall street journal"];
@@ -14,9 +13,10 @@ var fakeNews = ["the national enquirer"];
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         // All anchor tags on the page
-        $('.profileLink, .fwb.fcg a').not('.checked').each(function(index, value){
+        $('.fwb.fcg a, .fwn.fcg a').not('.checked').each(function(index, value){
             $(this).addClass('checked');
             var profile = $(this).text().toLowerCase();
+
             if(new RegExp(leftBias.join("|")).test(profile)) {
                 $(value).closest('._1dwg').css(blueBorder);
                 $(value).closest('._1dwg').prepend('<h3 style="color:blue;margin-bottom:10px;">Politcal: Left-Leaning</h3>');
