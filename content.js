@@ -8,12 +8,12 @@ var leftBias = ["cnn", "abc news", "the atlantic","the atlantic: news", "the atl
 var neutral = ["npr", "npr politics"];
 var rightBias = ["the wall street journal"];
 var satire = ["onion", "the really independent florida crocodile", "the eggplant fsu", "clickhole", "waterford whispers news"];
-var fakeNews = ["the national enquirer"];
+var fakeNews = ["the national enquirer", "politicops.com"];
 
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         // All anchor tags on the page
-        $('.fwb.fcg a, .fwn.fcg a').not('.checked').each(function(index, value){
+        $('.fwb.fcg a, .fwn.fcg a, ._6lz._6mb.ellipsis').not('.checked').each(function(index, value){
             $(this).addClass('checked');
             var profile = $(this).text().toLowerCase();
 
