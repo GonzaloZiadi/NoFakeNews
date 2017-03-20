@@ -3,6 +3,9 @@
   "version": "1.0",
   "manifest_version": 2,
   "description": "Mark fake news on your Facebook feed",
+  "permissions":[
+    "storage"
+  ],
   "browser_action": {
     "name": "No Fake News",
     "icons": ["icon.png"],
