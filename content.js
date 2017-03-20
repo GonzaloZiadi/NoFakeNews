@@ -19,24 +19,26 @@ var observer = new MutationObserver(function(mutations) {
 
             if(new RegExp(leftBias.join("|")).test(profile)) {
                 $(value).closest('._1dwg').css(blueBorder);
-                $(value).closest('._1dwg').prepend('<h3 style="color:blue;margin-bottom:10px;">Politcal: Left-Leaning</h3>');
+                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:blue;margin-bottom:10px;">Politcal: Left-Leaning</h3>');
             }
             else if(new RegExp(neutral.join("|")).test(profile)) {
                 $(value).closest('._1dwg').css(greenBorder);
-                $(value).closest('._1dwg').prepend('<h3 style="color:green;margin-bottom:10px;">Neutral</h3>');
+                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:green;margin-bottom:10px;">Neutral</h3>');
             }
             else if(new RegExp(rightBias.join("|")).test(profile)) {
                 $(value).closest('._1dwg').css(redBorder);
-                $(value).closest('._1dwg').prepend('<h3 style="color:red;margin-bottom:10px;">Political: Right-Leaning</h3>');
+                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:red;margin-bottom:10px;">Political: Right-Leaning</h3>');
             }
             else if(new RegExp(satire.join("|")).test(profile)) {
                 $(value).closest('._1dwg').css(purpleBorder);
-                $(value).closest('._1dwg').prepend('<h3 style="color:purple;margin-bottom:10px;">Satire</h3>');
+                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:purple;margin-bottom:10px;">Satire</h3>');
             }
             else if(new RegExp(fakeNews.join("|")).test(profile)) {
                 $(value).closest('._1dwg').css(brownBorder);
-                $(value).closest('._1dwg').prepend('<h3 style="color:brown;margin-bottom:10px;">FAKE NEWS!</h3>');
+                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:brown;margin-bottom:10px;">FAKE NEWS!</h3>');
             }
+
+            $(value).closest('._1dwg').addClass('checked-prepend');
         })
     })
 });
