@@ -4,9 +4,9 @@ var redBorder = {"border": "3px solid red"};
 var purpleBorder = {"border": "3px solid purple"};
 var brownBorder = {"border": "3px solid brown"};
 
-var leftBias = ["cnn", "the atlantic","the atlantic: news", "the atlantic: politics & policy", "the guardian", "nowthis", "nowthis politics", "vox", "msnbc", "the huffington post", "the huffington post canada", "occupy democrats", "guardian us", "usa today"];
+var leftBias = ["cnn", "the atlantic","the atlantic: news", "the atlantic: politics & policy", "the guardian", "nowthis", "nowthis politics", "vox", "msnbc", "the huffington post", "the huffington post canada", "occupy democrats", "guardian us", "usa today", "proud liberals"];
 var neutral = ["npr", "npr politics", "bbc news", "washington post", "washington post politics", "the new york times", "nbc news", "nbc news world", "abc news", "abc news politics", "apnews.com", "ap business news", "ap live", "ap politics", "reuters", "the daily dot", "bloomberg", "bloomberg technology", "bloomberg politics"];
-var rightBias = ["the wall street journal", "the economist", "the fiscal times", "the hill", "fox news", "fox news politics", "theblaze", "breitbart", "breitbart news", "breitbart london", "the daily caller", "the daily caller politics", "redstate", "infowars"];
+var rightBias = ["the wall street journal", "the economist", "the fiscal times", "the hill", "fox news", "fox news politics", "theblaze", "breitbart", "breitbart news", "breitbart london", "the daily caller", "the daily caller politics", "redstate", "infowars", "young conservatives", "youngcons.com"];
 var satire = ["onion", "the really independent florida crocodile", "the eggplant fsu", "clickhole", "waterford whispers news", "newsbiscuit.com", "collegehumor"];
 var fakeNews = ["the national enquirer", "newslo", "politicops.com"];
 
