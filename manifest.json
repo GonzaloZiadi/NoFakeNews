@@ -2,7 +2,7 @@
   "name": "No Fake News",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "Mark fake news on your Facebook feed",
+  "description": "Labels news (left/right-leaning, neutral, satire, or fake) on your Facebook feed based on their source.",
   "browser_action": {
     "name": "No Fake News",
     "icons": ["icon.png"],
