@@ -1,79 +1,97 @@
 <html>
-<head>
-	<title>No Fake News</title>
-	<style>
-		html, body {
-			width: 180px;
-		}
-		.source {
-			height: 10px;
-			width: 10px;
-			display: inline-block;
-		}
-		.input-field { display:none;}
-	</style>
-</head>
-<body>
-	<h1>No Fake News</h1>
+	<head>
+		<title>No Fake News</title>
+		<style>
+			html, body {
+				width: 180px;
+			}
+			.source {
+				height: 10px;
+				width: 10px;
+				display: inline-block;
+			}
+			.red {
+				background: red;
+			}
+			.blue {
+				background: blue;
+			}
+			.green {
+				background: green;
+			}
+			.purple {
+				background: purple;
+			}
+			.brown {
+				background: brown;
+			}
+			.input-field {
+				display: none;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>No Fake News</h1>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source" style="background: blue;"></div>
-			Left bias
-	</div>
-		<div class="input-field">
-			<input type="text" id="input-left" placeholder="Add Source"/>
-			<button id="add-left" value="Add Source">Add Source</button>
-	</div>
-	</div>
+		<div>
+			<div class="source-wrapper">
+				<div class="source" class="blue"></div>
+				Left bias
+		</div>
+			<div class="input-field">
+				<input type="text" id="input-left" placeholder="Add Source"/>
+				<button id="add-left" value="Add Source">Add Source</button>
+		</div>
+		</div>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source" style="background: green;"></div>
-			Neutral
-	</div>
-		<div class="input-field">
-			<input type="text" id="input-neutral" placeholder="Add Source"/>
-			<button id="add-neutral" value="Add Source">Add Source</button>
-	</div>
-	</div>
+		<div>
+			<div class="source-wrapper">
+				<div class="source" class="green"></div>
+				Neutral
+		</div>
+			<div class="input-field">
+				<input type="text" id="input-neutral" placeholder="Add Source"/>
+				<button id="add-neutral" value="Add Source">Add Source</button>
+		</div>
+		</div>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source" style="background: red;"></div>
-			Right bias
-	</div>
-		<div class="input-field">
-			<input type="text" id="input-right" placeholder="Add Source"/>
-			<button id="add-right" value="Add Source">Add Source</button>
-	</div>
-	</div>
+		<div>
+			<div class="source-wrapper">
+				<div class="source" class="red"></div>
+				Right bias
+		</div>
+			<div class="input-field">
+				<input type="text" id="input-right" placeholder="Add Source"/>
+				<button id="add-right" value="Add Source">Add Source</button>
+		</div>
+		</div>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source" style="background: purple;"></div>
-			input-satire
-	</div>
-		<div class="input-field">
-			<input type="text" id="input-satire" placeholder="Add Source"/>
-			<button id="add-neutral" value="Add Source">Add Source</button>
-	</div>
-	</div>
+		<div>
+			<div class="source-wrapper">
+				<div class="source" class="purple"></div>
+				input-satire
+		</div>
+			<div class="input-field">
+				<input type="text" id="input-satire" placeholder="Add Source"/>
+				<button id="add-neutral" value="Add Source">Add Source</button>
+		</div>
+		</div>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source" style="background: brown;"></div>
-			Fake news
-	</div>
-		<div class="input-field">
-			<input type="text" id="add-fake" placeholder="Add Source"/>
-			<button id="add-fake" value="Add Source">Add Source</button>
-	</div>
-	</div>
+		<div>
+			<div class="source-wrapper">
+				<div class="source" class="brown"></div>
+				Fake news
+		</div>
+			<div class="input-field">
+				<input type="text" id="add-fake" placeholder="Add Source"/>
+				<button id="add-fake" value="Add Source">Add Source</button>
+		</div>
+		</div>
 
-	<!-- Add popup.js file to open this link in a new tab -->
-	<a href="https://mediabiasfactcheck.com/" target='_newtab'>Learn more about fake news</a>
-	<script type='text/javascript' src='jquery.js'></script>
-	<script type='text/javascript' src='content.js'></script>
-</body>
+		<a href="https://mediabiasfactcheck.com/" target='_newtab'>Learn more about fake news</a>
+
+		<script type='text/javascript' src='jquery.js'></script>
+		<script type='text/javascript' src='content.js'></script>
+	</body>
 </html>
