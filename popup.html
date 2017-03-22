@@ -10,6 +10,22 @@
 			width: 10px;
 			display: inline-block;
 		}
+
+			.red {
+				background: red;
+			}
+			.blue {
+				background: blue;
+			}
+			.green {
+				background: green;
+			}
+			.purple {
+				background: purple;
+			}
+			.brown {
+				background: brown;
+			}	
 		.input-field { display:none;}
 		input { max-width:165px; }
 		.plus-icon, .minus-icon { margin-left: 5px; }
@@ -21,7 +37,7 @@
 
 	<div>
 		<div class="source-wrapper">
-			<div class="source" style="background: blue;"></div>
+			<div class="source blue" style="background: blue;"></div>
 			Left bias<span class="plus-icon">+</span><span class="minus-icon">-</span>
 	</div>
 		<div class="input-field">
@@ -32,7 +48,7 @@
 
 	<div>
 		<div class="source-wrapper">
-			<div class="source" style="background: green;"></div>
+			<div class="source green" style="background: green;"></div>
 			Neutral<span class="plus-icon">+</span><span class="minus-icon">-</span>
 	</div>
 		<div class="input-field">
@@ -43,7 +59,7 @@
 
 	<div>
 		<div class="source-wrapper">
-			<div class="source" style="background: red;"></div>
+			<div class="source green" style="background: red;"></div>
 			Right bias<span class="plus-icon">+</span><span class="minus-icon">-</span>
 		</div>
 		<div class="input-field">
@@ -54,7 +70,7 @@
 
 	<div>
 		<div class="source-wrapper">
-			<div class="source" style="background: purple;"></div>
+			<div class="source purple" style="background: purple;"></div>
 			Satire<span class="plus-icon">+</span><span class="minus-icon">-</span>
 	</div>
 		<div class="input-field">
@@ -65,7 +81,7 @@
 
 	<div>
 		<div class="source-wrapper">
-			<div class="source" style="background: brown;"></div>
+			<div class="source brown" style="background: brown;"></div>
 			Fake news<span class="plus-icon">+</span><span class="minus-icon">-</span>
 		</div>
 		<div class="input-field">
@@ -73,10 +89,13 @@
 			<button id="add-fake" value="Add Source">Add Source</button>
 		</div>
 	</div>
+	<p>Click on a category to add new sources to filter.</p>
 
-	<!-- Add popup.js file to open this link in a new tab -->
-	<a href="https://mediabiasfactcheck.com/" target='_newtab'>Learn more about fake news</a>
-	<script type='text/javascript' src='jquery.js'></script>
-	<script type='text/javascript' src='content.js'></script>
-</body>
+		<a href="https://mediabiasfactcheck.com/" target='_newtab'>Learn more about fake news</a>
+
+	<p style="cursor:pointer;text-decoration:underline" id="clear-storage">Clear all custom filters.</p>	
+
+		<script type='text/javascript' src='jquery.js'></script>
+		<script type='text/javascript' src='content.js'></script>
+	</body>
 </html>
