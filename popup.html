@@ -11,6 +11,9 @@
 			display: inline-block;
 		}
 		.input-field { display:none;}
+		input { max-width:165px; }
+		.plus-icon, .minus-icon { margin-left: 5px; }
+		.minus-icon { display:none; }
 	</style>
 </head>
 <body>
@@ -19,7 +22,7 @@
 	<div>
 		<div class="source-wrapper">
 			<div class="source" style="background: blue;"></div>
-			Left bias
+			Left bias<span class="plus-icon">+</span><span class="minus-icon">-</span>
 	</div>
 		<div class="input-field">
 			<input type="text" id="input-left" placeholder="Add Source"/>
@@ -30,7 +33,7 @@
 	<div>
 		<div class="source-wrapper">
 			<div class="source" style="background: green;"></div>
-			Neutral
+			Neutral<span class="plus-icon">+</span><span class="minus-icon">-</span>
 	</div>
 		<div class="input-field">
 			<input type="text" id="input-neutral" placeholder="Add Source"/>
@@ -41,7 +44,7 @@
 	<div>
 		<div class="source-wrapper">
 			<div class="source" style="background: red;"></div>
-			Right bias
+			Right bias<span class="plus-icon">+</span><span class="minus-icon">-</span>
 		</div>
 		<div class="input-field">
 			<input type="text" id="input-right" placeholder="Add Source"/>
@@ -52,27 +55,27 @@
 	<div>
 		<div class="source-wrapper">
 			<div class="source" style="background: purple;"></div>
-			Satire
+			Satire<span class="plus-icon">+</span><span class="minus-icon">-</span>
 	</div>
 		<div class="input-field">
 			<input type="text" id="input-satire" placeholder="Add Source"/>
-			<button id="add-neutral" value="Add Source">Add Source</button>
+			<button id="add-satire" value="Add Source">Add Source</button>
 		</div>
 	</div>
-	
+
 	<div>
 		<div class="source-wrapper">
 			<div class="source" style="background: brown;"></div>
-			Fake news
+			Fake news<span class="plus-icon">+</span><span class="minus-icon">-</span>
 		</div>
 		<div class="input-field">
-			<input type="text" id="add-fake" placeholder="Add Source"/>
+			<input type="text" id="input-fake" placeholder="Add Source"/>
 			<button id="add-fake" value="Add Source">Add Source</button>
 		</div>
 	</div>
 
 	<!-- Add popup.js file to open this link in a new tab -->
-	<a href="https://mediabiasfactcheck.com/">Learn more about fake news</a>
+	<a href="https://mediabiasfactcheck.com/" target='_newtab'>Learn more about fake news</a>
 	<script type='text/javascript' src='jquery.js'></script>
 	<script type='text/javascript' src='content.js'></script>
 </body>
