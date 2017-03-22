@@ -10,90 +10,105 @@
 			width: 10px;
 			display: inline-block;
 		}
-
-			.red {
-				background: red;
-			}
-			.blue {
-				background: blue;
-			}
-			.green {
-				background: green;
-			}
-			.purple {
-				background: purple;
-			}
-			.brown {
-				background: brown;
-			}	
-		.input-field { display:none;}
-		input { max-width:165px; }
-		.plus-icon, .minus-icon { margin-left: 5px; }
-		.minus-icon { display:none; }
+		.red {
+			background: red;
+		}
+		.blue {
+			background: blue;
+		}
+		.green {
+			background: green;
+		}
+		.purple {
+			background: purple;
+		}
+		.brown {
+			background: brown;
+		}
+		.input-field {
+			display:none;
+		}
+		input {
+			max-width:165px;
+		}
+		.plus-icon, .minus-icon {
+			margin-left: 5px;
+		}
+		.minus-icon {
+			display:none;
+		}
+		.clear-filters {
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		a:visited {
+			color: blue;
+		}
 	</style>
 </head>
-<body>
-	<h1>No Fake News</h1>
+	<body>
+		<h1>No Fake News</h1>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source blue" style="background: blue;"></div>
-			Left bias<span class="plus-icon">+</span><span class="minus-icon">-</span>
-	</div>
-		<div class="input-field">
-			<input type="text" id="input-left" placeholder="Add Source"/>
-			<button id="add-left" value="Add Source">Add Source</button>
+		<div>
+			<div class="source-wrapper">
+				<div class="source blue" style="background: blue;"></div>
+				Left bias<span class="plus-icon">+</span><span class="minus-icon">-</span>
 		</div>
-	</div>
+			<div class="input-field">
+				<input type="text" id="input-left" placeholder="Add Source"/>
+				<button id="add-left" value="Add Source">Add Source</button>
+			</div>
+		</div>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source green" style="background: green;"></div>
-			Neutral<span class="plus-icon">+</span><span class="minus-icon">-</span>
-	</div>
-		<div class="input-field">
-			<input type="text" id="input-neutral" placeholder="Add Source"/>
-			<button id="add-neutral" value="Add Source">Add Source</button>
+		<div>
+			<div class="source-wrapper">
+				<div class="source green" style="background: green;"></div>
+				Neutral<span class="plus-icon">+</span><span class="minus-icon">-</span>
 		</div>
-	</div>
+			<div class="input-field">
+				<input type="text" id="input-neutral" placeholder="Add Source"/>
+				<button id="add-neutral" value="Add Source">Add Source</button>
+			</div>
+		</div>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source green" style="background: red;"></div>
-			Right bias<span class="plus-icon">+</span><span class="minus-icon">-</span>
+		<div>
+			<div class="source-wrapper">
+				<div class="source green" style="background: red;"></div>
+				Right bias<span class="plus-icon">+</span><span class="minus-icon">-</span>
+			</div>
+			<div class="input-field">
+				<input type="text" id="input-right" placeholder="Add Source"/>
+				<button id="add-right" value="Add Source">Add Source</button>
+			</div>
 		</div>
-		<div class="input-field">
-			<input type="text" id="input-right" placeholder="Add Source"/>
-			<button id="add-right" value="Add Source">Add Source</button>
-		</div>
-	</div>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source purple" style="background: purple;"></div>
-			Satire<span class="plus-icon">+</span><span class="minus-icon">-</span>
-	</div>
-		<div class="input-field">
-			<input type="text" id="input-satire" placeholder="Add Source"/>
-			<button id="add-satire" value="Add Source">Add Source</button>
+		<div>
+			<div class="source-wrapper">
+				<div class="source purple" style="background: purple;"></div>
+				Satire<span class="plus-icon">+</span><span class="minus-icon">-</span>
 		</div>
-	</div>
+			<div class="input-field">
+				<input type="text" id="input-satire" placeholder="Add Source"/>
+				<button id="add-satire" value="Add Source">Add Source</button>
+			</div>
+		</div>
 
-	<div>
-		<div class="source-wrapper">
-			<div class="source brown" style="background: brown;"></div>
-			Fake news<span class="plus-icon">+</span><span class="minus-icon">-</span>
+		<div>
+			<div class="source-wrapper">
+				<div class="source brown" style="background: brown;"></div>
+				Fake news<span class="plus-icon">+</span><span class="minus-icon">-</span>
+			</div>
+			<div class="input-field">
+				<input type="text" id="input-fake" placeholder="Add Source"/>
+				<button id="add-fake" value="Add Source">Add Source</button>
+			</div>
 		</div>
-		<div class="input-field">
-			<input type="text" id="input-fake" placeholder="Add Source"/>
-			<button id="add-fake" value="Add Source">Add Source</button>
-		</div>
-	</div>
-	<p>Click on a category to add new sources to filter.</p>
+
+		<p>Click on a category to add new sources to filter.</p>
 
 		<a href="https://mediabiasfactcheck.com/" target='_newtab'>Learn more about fake news</a>
 
-	<p style="cursor:pointer;text-decoration:underline" id="clear-storage">Clear all custom filters.</p>	
+		<p class="clear-filters" id="clear-storage">Clear all custom filters.</p>
 
 		<script type='text/javascript' src='jquery.js'></script>
 		<script type='text/javascript' src='content.js'></script>
