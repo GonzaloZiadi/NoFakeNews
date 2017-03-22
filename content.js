@@ -4,127 +4,115 @@ var redBorder = {"border": "3px solid red"};
 var purpleBorder = {"border": "3px solid purple"};
 var brownBorder = {"border": "3px solid brown"};
 
-
 var leftBias = ["the atlantic","the atlantic: news", "the atlantic: politics & policy", "the guardian", "nowthis", "nowthis politics", "vox", "msnbc", "the huffington post", "the huffington post canada", "occupy democrats", "guardian us", "usa today", "proud liberals", "buzzfeed news", "the young turks"];
 var neutral = ["cnn", "npr", "npr politics", "bbc news", "washington post", "washington post politics", "the new york times", "nbc news", "nbc news world", "abc news", "abc news politics", "apnews.com", "ap business news", "ap live", "ap politics", "reuters", "the daily dot", "bloomberg", "bloomberg technology", "bloomberg politics", "the independent florida alligator", "vice news", "alligator.org"];
 var rightBias = ["the wall street journal", "the economist", "the fiscal times", "the hill", "fox news", "fox news politics", "theblaze", "breitbart", "breitbart news", "breitbart london", "the daily caller", "the daily caller politics", "redstate", "infowars", "young conservatives", "youngcons.com"];
 var satire = ["onion", "the really independent florida crocodile", "the eggplant fsu", "clickhole", "waterford whispers news", "newsbiscuit.com", "collegehumor"];
 var fakeNews = ["the national enquirer", "newslo", "politicops.com"];
 
-
-chrome.storage.local.get({localLeft: []}, function(result){
-    if(result.localLeft != ''){
+chrome.storage.local.get({localLeft: []}, function(result) {
+    if(result.localLeft != '') {
         leftBias = result.localLeft;
-        console.log(leftBias);
     }
 });
-chrome.storage.local.get({localNeutral: []}, function(result){
-    if(result.localNeutral != ''){
+
+chrome.storage.local.get({localNeutral: []}, function(result) {
+    if(result.localNeutral != '') {
         neutral = result.localNeutral;
-        console.log(neutral);
     }
 });
-chrome.storage.local.get({localRight: []}, function(result){
-    if(result.localRight != ''){
+
+chrome.storage.local.get({localRight: []}, function(result) {
+    if(result.localRight != '') {
         rightBias = result.localRight;
-        console.log(rightBias);
     }
 });
-chrome.storage.local.get({localFake: []}, function(result){
-    if(result.localFake != ''){
+
+chrome.storage.local.get({localFake: []}, function(result) {
+    if(result.localFake != '') {
         fakeNews = result.localFake;
-        console.log(fakeNews);
     }
 });
-chrome.storage.local.get({localSatire: []}, function(result){
-    if(result.localSatire != ''){
+
+chrome.storage.local.get({localSatire: []}, function(result) {
+    if(result.localSatire != '') {
         satire = result.localSatire;
-        console.log(satire);
     }
 });
 
-
-$('.source-wrapper').click(function(){
+$('.source-wrapper').click(function() {
     $(this).next('.input-field').toggle();
     $(this).find('.plus-icon, .minus-icon').toggle();
 });
 
-$('#add-left').click(function(){
+$('#add-left').click(function() {
     var source = $('#input-left').val().toLowerCase();
     if(source != ''){
         $(this).parent().hide();
         $('#input-left').val('');
         leftBias.push(source);
-        chrome.storage.local.set({'localLeft':leftBias}, function() {
-            console.log(leftBias);
-        });
+        chrome.storage.local.set({'localLeft':leftBias}, function() {});
         $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
         chrome.tabs.reload();
     }
 });
 
-$('#add-right').click(function(){
+$('#add-right').click(function() {
     var source = $('#input-right').val().toLowerCase();
-    if(source != ''){
+    if(source != '') {
         rightBias.push(source);
         $(this).parent().hide();
         $('#input-right').val('');
-        chrome.storage.local.set({'localRight':rightBias}, function() {
-            console.log(rightBias);
-        });
-        $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
-        chrome.tabs.reload();
-    }
-});
-$('#add-fake').click(function(){
-    var source = $('#input-fake').val().toLowerCase();
-    if(source != ''){
-        fakeNews.push(source);
-        $(this).parent().hide();
-        $('#input-fake').val('');
-        chrome.storage.local.set({'localFake':fakeNews}, function() {
-            console.log(fakeNews);
-        });
-        $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
-        chrome.tabs.reload();
-    }
-});
-$('#add-neutral').click(function(){
-    var source = $('#input-neutral').val().toLowerCase();
-    if(source != ''){
-        neutral.push(source);
-        $(this).parent().hide();
-        $('#input-neutral').val('');
-        chrome.storage.local.set({'localNeutral':neutral}, function() {
-            console.log(neutral);
-        });
-        $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
-        chrome.tabs.reload();
-    }
-});
-$('#add-satire').click(function(){
-    var source = $('#input-satire').val().toLowerCase();
-    if(source != ''){
-        satire.push(source);
-        $(this).parent().hide();
-        $('#input-satire').val('');
-        chrome.storage.local.set({'localSatire':satire}, function() {
-            console.log(satire);
-        });
+        chrome.storage.local.set({'localRight':rightBias}, function() {});
         $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
         chrome.tabs.reload();
     }
 });
 
-$('#clear-storage').click(function(){
-    chrome.storage.local.clear(function(){
+$('#add-fake').click(function() {
+    var source = $('#input-fake').val().toLowerCase();
+    if(source != '') {
+        fakeNews.push(source);
+        $(this).parent().hide();
+        $('#input-fake').val('');
+        chrome.storage.local.set({'localFake':fakeNews}, function() {});
+        $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
+        chrome.tabs.reload();
+    }
+});
+
+$('#add-neutral').click(function() {
+    var source = $('#input-neutral').val().toLowerCase();
+    if(source != '') {
+        neutral.push(source);
+        $(this).parent().hide();
+        $('#input-neutral').val('');
+        chrome.storage.local.set({'localNeutral':neutral}, function() {});
+        $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
+        chrome.tabs.reload();
+    }
+});
+
+$('#add-satire').click(function() {
+    var source = $('#input-satire').val().toLowerCase();
+    if(source != '') {
+        satire.push(source);
+        $(this).parent().hide();
+        $('#input-satire').val('');
+        chrome.storage.local.set({'localSatire':satire}, function() {});
+        $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
+        chrome.tabs.reload();
+    }
+});
+
+$('#clear-storage').click(function() {
+    chrome.storage.local.clear(function() {
         chrome.tabs.reload();
     });
 });
 
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
-        // All anchor tags on the page
         $('.fwb.fcg a, .fwn.fcg a, ._6lz._6mb.ellipsis').not('.checked-div').each(function(index, value){
             $(this).addClass('checked-div');
             var profile = $(this).text().toLowerCase();
@@ -158,10 +146,10 @@ var observer = new MutationObserver(function(mutations) {
     });
 });
 
+var target = document.body;
 var config = {
     childList: true,
     subtree: true
 };
 
-var target = document.body;
 observer.observe(target, config);
