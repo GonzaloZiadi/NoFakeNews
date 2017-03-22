@@ -14,31 +14,31 @@ var fakeNews = ["the national enquirer", "newslo", "politicops.com"];
 
 chrome.storage.local.get({localLeft: []}, function(result){
     if(result.localLeft != ''){
-        leftBias = result.localLeft; 
+        leftBias = result.localLeft;
         console.log(leftBias);
     }
 });
 chrome.storage.local.get({localNeutral: []}, function(result){
     if(result.localNeutral != ''){
-        neutal = result.localNeutral; 
+        neutral = result.localNeutral;
         console.log(neutral);
     }
 });
 chrome.storage.local.get({localRight: []}, function(result){
     if(result.localRight != ''){
-        rightBias = result.localRight; 
+        rightBias = result.localRight;
         console.log(rightBias);
     }
 });
 chrome.storage.local.get({localFake: []}, function(result){
     if(result.localFake != ''){
-        fakeNews = result.localFake; 
+        fakeNews = result.localFake;
         console.log(fakeNews);
     }
 });
 chrome.storage.local.get({localSatire: []}, function(result){
     if(result.localSatire != ''){
-        satire = result.localSatire; 
+        satire = result.localSatire;
         console.log(satire);
     }
 });
@@ -54,7 +54,7 @@ $('#add-left').click(function(){
     if(source != ''){
         $(this).parent().hide();
         $('#input-left').val('');
-        leftBias.push(source); 
+        leftBias.push(source);
         chrome.storage.local.set({'localLeft':leftBias}, function() {
             console.log(leftBias);
         });
