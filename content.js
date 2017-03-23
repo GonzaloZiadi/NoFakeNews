@@ -118,47 +118,48 @@ $("#clear-storage").on("click enter", function(){
         $(this).trigger('enter');
     }
 });
+
 $(document).ready(function(){
     var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-        $('.fwb.fcg a, .fwn.fcg a, ._6lz._6mb.ellipsis').not('.checked-div').each(function(index, value){
-            $(this).addClass('checked-div');
-            var profile = $(this).text().toLowerCase();
+        mutations.forEach(function(mutation) {
+            $('.fwb.fcg a, .fwn.fcg a, ._6lz._6mb.ellipsis').not('.checked-div').each(function(index, value){
+                $(this).addClass('checked-div');
+                var profile = $(this).text().toLowerCase();
 
-            if(new RegExp(leftBias.join("|")).test(profile)) {
-                $(value).closest('._1dwg').css(blueBorder);
-                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:blue;margin-bottom:10px;">Left-Leaning</h3>');
-                $(value).closest('._1dwg').addClass('checked-prepend');
-            }
-            else if(new RegExp(neutral.join("|")).test(profile)) {
-                $(value).closest('._1dwg').css(greenBorder);
-                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:green;margin-bottom:10px;">Neutral & Trusted Source</h3>');
-                $(value).closest('._1dwg').addClass('checked-prepend');
-            }
-            else if(new RegExp(rightBias.join("|")).test(profile)) {
-                $(value).closest('._1dwg').css(redBorder);
-                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:red;margin-bottom:10px;">Right-Leaning</h3>');
-                $(value).closest('._1dwg').addClass('checked-prepend');
-            }
-            else if(new RegExp(satire.join("|")).test(profile)) {
-                $(value).closest('._1dwg').css(purpleBorder);
-                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:purple;margin-bottom:10px;">Satire</h3>');
-                $(value).closest('._1dwg').addClass('checked-prepend');
-            }
-            else if(new RegExp(fakeNews.join("|")).test(profile)) {
-                $(value).closest('._1dwg').css(brownBorder);
-                $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:brown;margin-bottom:10px;">FAKE NEWS!</h3>');
-                $(value).closest('._1dwg').addClass('checked-prepend');
-            }
+                if(new RegExp(leftBias.join("|")).test(profile)) {
+                    $(value).closest('._1dwg').css(blueBorder);
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:blue;margin-bottom:10px;">Left-Leaning</h3>');
+                    $(value).closest('._1dwg').addClass('checked-prepend');
+                }
+                else if(new RegExp(neutral.join("|")).test(profile)) {
+                    $(value).closest('._1dwg').css(greenBorder);
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:green;margin-bottom:10px;">Neutral & Trusted Source</h3>');
+                    $(value).closest('._1dwg').addClass('checked-prepend');
+                }
+                else if(new RegExp(rightBias.join("|")).test(profile)) {
+                    $(value).closest('._1dwg').css(redBorder);
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:red;margin-bottom:10px;">Right-Leaning</h3>');
+                    $(value).closest('._1dwg').addClass('checked-prepend');
+                }
+                else if(new RegExp(satire.join("|")).test(profile)) {
+                    $(value).closest('._1dwg').css(purpleBorder);
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:purple;margin-bottom:10px;">Satire</h3>');
+                    $(value).closest('._1dwg').addClass('checked-prepend');
+                }
+                else if(new RegExp(fakeNews.join("|")).test(profile)) {
+                    $(value).closest('._1dwg').css(brownBorder);
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:brown;margin-bottom:10px;">FAKE NEWS!</h3>');
+                    $(value).closest('._1dwg').addClass('checked-prepend');
+                }
+            });
         });
     });
-});
 
-var target = document.body;
-var config = {
-    childList: true,
-    subtree: true
-};
+    var target = document.body;
+    var config = {
+        childList: true,
+        subtree: true
+    };
 
-observer.observe(target, config);
+    observer.observe(target, config);
 });
