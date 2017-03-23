@@ -52,9 +52,9 @@ $(".source-wrapper").on("click enter", function(){
 $('#add-left').click(function() {
     var source = $('#input-left').val().toLowerCase();
     if(source != ''){
+        leftBias.push(source);
         $(this).parent().hide();
         $('#input-left').val('');
-        leftBias.push(source);
         chrome.storage.local.set({'localLeft':leftBias}, function() {});
         $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
         chrome.tabs.reload();
