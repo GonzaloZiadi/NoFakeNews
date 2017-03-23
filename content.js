@@ -118,8 +118,8 @@ $("#clear-storage").on("click enter", function(){
         $(this).trigger('enter');
     }
 });
-
-var observer = new MutationObserver(function(mutations) {
+$(document).ready(function(){
+    var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         $('.fwb.fcg a, .fwn.fcg a, ._6lz._6mb.ellipsis').not('.checked-div').each(function(index, value){
             $(this).addClass('checked-div');
@@ -161,3 +161,4 @@ var config = {
 };
 
 observer.observe(target, config);
+});
