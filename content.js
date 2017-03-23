@@ -8,7 +8,7 @@ var leftBias = ["the atlantic","the atlantic: news", "the atlantic: politics & p
 var neutral = ["cnn", "npr", "npr politics", "bbc news", "washington post", "washington post politics", "the new york times", "nbc news", "nbc news world", "abc news", "abc news politics", "apnews.com", "ap business news", "ap live", "ap politics", "reuters", "the daily dot", "bloomberg", "bloomberg technology", "bloomberg politics", "the independent florida alligator", "vice news", "alligator.org"];
 var rightBias = ["the wall street journal", "the economist", "the fiscal times", "the hill", "fox news", "fox news politics", "theblaze", "breitbart", "breitbart news", "breitbart london", "the daily caller", "the daily caller politics", "redstate", "infowars", "young conservatives", "youngcons.com"];
 var satire = ["onion", "the really independent florida crocodile", "the eggplant fsu", "clickhole", "waterford whispers news", "newsbiscuit.com", "collegehumor"];
-var fakeNews = ["the national enquirer", "newslo", "politicops.com"];
+var fakeNews = ["the national enquirer", "newslo", "politicops.com", "americannews.com"];
 
 chrome.storage.local.get({localLeft: []}, function(result) {
     if(result.localLeft != '') {
