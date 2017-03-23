@@ -40,9 +40,13 @@ chrome.storage.local.get({localSatire: []}, function(result) {
     }
 });
 
-$('.source-wrapper').click(function() {
+$(".source-wrapper").on("click enter", function(){
     $(this).next('.input-field').toggle();
     $(this).find('.plus-icon, .minus-icon').toggle();
+}).on('keypress', function(e) {
+    if(e.which === 13) {
+        $(this).trigger('enter');
+    }
 });
 
 $('#add-left').click(function() {
@@ -105,10 +109,14 @@ $('#add-satire').click(function() {
     }
 });
 
-$('#clear-storage').click(function() {
+$("#clear-storage").on("click enter", function(){
     chrome.storage.local.clear(function() {
         chrome.tabs.reload();
     });
+}).on('keypress', function(e) {
+    if(e.which === 13) {
+        $(this).trigger('enter');
+    }
 });
 
 var observer = new MutationObserver(function(mutations) {
