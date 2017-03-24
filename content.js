@@ -1,8 +1,20 @@
 var blueBorder = {"border": "3px solid blue"};
-var greenBorder = {"border": "3px solid green"};
 var redBorder = {"border": "3px solid red"};
-var purpleBorder = {"border": "3px solid purple"};
 var brownBorder = {"border": "3px solid brown"};
+var purpleBorder = {"border": "3px solid purple"};
+var greenBorder = {"border": "3px solid green"};
+
+var left_style = "background:blue; color:white; text-align:center; margin-bottom:10px; padding:5px; font-size:16px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"
+var right_style = "background:red; color:white; text-align:center; margin-bottom:10px; padding:5px; font-size:16px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"
+var fake_style = "background:brown; color:white; text-align:center; margin-bottom:10px; padding:5px; font-size:16px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"
+var satire_style = "background:purple; color:white; text-align:center; margin-bottom:10px; padding:5px; font-size:16px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"
+var neutral_style = "background:green; color:white; text-align:center; margin-bottom:10px; padding:5px; font-size:16px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"
+
+var left_leaning_news = '<h3 style="' + left_style + '">Left-Leaning</h3>';
+var right_leaning_news = '<h3 style="' + right_style + '">Right-Leaning</h3>';
+var fake_news = '<h3 style="' + fake_style + '">Fake News!</h3>';
+var satire_news = '<h3 style="' + satire_style + '">Satire</h3>';
+var neutral_news = '<h3 style="' + neutral_style + '">Neutral</h3>';
 
 var leftBias = ["the atlantic","the atlantic: news", "the atlantic: politics & policy", "the guardian", "nowthis", "nowthis politics", "vox", "msnbc", "the huffington post", "the huffington post canada", "occupy democrats", "guardian us", "usa today", "proud liberals", "buzzfeed news", "the young turks"];
 var neutral = ["cnn", "npr", "npr politics", "bbc news", "washington post", "washington post politics", "the new york times", "nbc news", "nbc news world", "abc news", "abc news politics", "apnews.com", "ap business news", "ap live", "ap politics", "reuters", "the daily dot", "bloomberg", "bloomberg technology", "bloomberg politics", "the independent florida alligator", "vice news", "alligator.org"];
@@ -148,27 +160,27 @@ $(document).ready(function(){
 
                 if(new RegExp(leftBias.join("|")).test(profile)) {
                     $(value).closest('._1dwg').css(blueBorder);
-                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:blue;margin-bottom:10px;">Left-Leaning</h3>');
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend(left_leaning_news);
                     $(value).closest('._1dwg').addClass('checked-prepend');
                 }
                 else if(new RegExp(neutral.join("|")).test(profile)) {
                     $(value).closest('._1dwg').css(greenBorder);
-                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:green;margin-bottom:10px;">Neutral & Trusted Source</h3>');
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend(neutral_news);
                     $(value).closest('._1dwg').addClass('checked-prepend');
                 }
                 else if(new RegExp(rightBias.join("|")).test(profile)) {
                     $(value).closest('._1dwg').css(redBorder);
-                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:red;margin-bottom:10px;">Right-Leaning</h3>');
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend(right_leaning_news);
                     $(value).closest('._1dwg').addClass('checked-prepend');
                 }
                 else if(new RegExp(satire.join("|")).test(profile)) {
                     $(value).closest('._1dwg').css(purpleBorder);
-                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:purple;margin-bottom:10px;">Satire</h3>');
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend(satire_news);
                     $(value).closest('._1dwg').addClass('checked-prepend');
                 }
                 else if(new RegExp(fakeNews.join("|")).test(profile)) {
                     $(value).closest('._1dwg').css(brownBorder);
-                    $(value).closest('._1dwg').not('.checked-prepend').prepend('<h3 style="color:brown;margin-bottom:10px;">FAKE NEWS!</h3>');
+                    $(value).closest('._1dwg').not('.checked-prepend').prepend(fake_news);
                     $(value).closest('._1dwg').addClass('checked-prepend');
                 }
             });
