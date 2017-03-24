@@ -14,7 +14,7 @@ var left_leaning_news = '<h3 style="' + left_style + '">Left-Leaning</h3>';
 var right_leaning_news = '<h3 style="' + right_style + '">Right-Leaning</h3>';
 var fake_news = '<h3 style="' + fake_style + '">Fake News!</h3>';
 var satire_news = '<h3 style="' + satire_style + '">Satire</h3>';
-var neutral_news = '<h3 style="' + neutral_style + '">Neutral</h3>';
+var neutral_news = '<h3 style="' + neutral_style + '">Neutral & Trusted</h3>';
 
 var leftBias = ["the atlantic","the atlantic: news", "the atlantic: politics & policy", "the guardian", "nowthis", "nowthis politics", "vox", "msnbc", "the huffington post", "the huffington post canada", "occupy democrats", "guardian us", "usa today", "proud liberals", "buzzfeed news", "the young turks"];
 var neutral = ["cnn", "npr", "npr politics", "bbc news", "washington post", "washington post politics", "the new york times", "nbc news", "nbc news world", "abc news", "abc news politics", "apnews.com", "ap business news", "ap live", "ap politics", "reuters", "the daily dot", "bloomberg", "bloomberg technology", "bloomberg politics", "the independent florida alligator", "vice news", "alligator.org"];
