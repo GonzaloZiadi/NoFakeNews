@@ -43,6 +43,11 @@ chrome.storage.local.get({localSatire: []}, function(result) {
 $(".source-wrapper").on("click enter", function(){
     $(this).next('.input-field').toggle();
     $(this).find('.plus-icon, .minus-icon').toggle();
+    $('#add-left-error').text("");
+    $('#add-right-error').text("");
+    $('#add-satire-error').text("");
+    $('#add-neutral-error').text("");
+    $('#add-fake-error').text("");
 }).on('keypress', function(e) {
     if(e.which === 13) {
         $(this).trigger('enter');
@@ -59,6 +64,9 @@ $('#add-left').click(function() {
         $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
         chrome.tabs.reload();
     }
+    else {
+        $('#add-left-error').text("Source name can't be empty");
+    }
 });
 
 $('#add-right').click(function() {
@@ -70,6 +78,9 @@ $('#add-right').click(function() {
         chrome.storage.local.set({'localRight':rightBias}, function() {});
         $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
         chrome.tabs.reload();
+    }
+    else {
+        $('#add-right-error').text("Source name can't be empty");
     }
 });
 
@@ -83,6 +94,9 @@ $('#add-fake').click(function() {
         $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
         chrome.tabs.reload();
     }
+    else {
+        $('#add-fake-error').text("Source name can't be empty");
+    }
 });
 
 $('#add-neutral').click(function() {
@@ -95,6 +109,9 @@ $('#add-neutral').click(function() {
         $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
         chrome.tabs.reload();
     }
+    else {
+        $('#add-neutral-error').text("Source name can't be empty");
+    }
 });
 
 $('#add-satire').click(function() {
@@ -106,6 +123,9 @@ $('#add-satire').click(function() {
         chrome.storage.local.set({'localSatire':satire}, function() {});
         $(this).prev('.source-wrapper').find('.plus-icon, .minus-icon').toggle();
         chrome.tabs.reload();
+    }
+    else {
+        $('#add-satire-error').text("Source name can't be empty");
     }
 });
 
